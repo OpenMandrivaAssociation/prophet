@@ -14,7 +14,6 @@ Patch1:		prophet-ini_file_in_etc.diff
 Patch2:		prophet-helio.diff
 Requires:	dtn
 BuildRequires:	qt4-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 PRoPHET is a Probabilistic Routing Protocol using a History Imageof Encounters
