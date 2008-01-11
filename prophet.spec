@@ -72,18 +72,6 @@ install -m0755 %{name} %{buildroot}%{_sbindir}/
 install -m0644 %{name}.ini %{buildroot}%{_sysconfdir}/
 
 # menu
-install -d %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} <<EOF
-
-?package(%{name}): \
-command="%{_sbindir}/%{name}" \
-title="PRoPHET" \
-longtitle="A Probabilistic Routing Protocol" \
-needs="x11" \
-icon="%{name}.png" \
-section="Internet/Remote Access" \
-xdg="true"
-EOF
 
 # icon
 install -d %{buildroot}%{_miconsdir}
@@ -124,7 +112,6 @@ rm -rf %{buildroot}
 %dir %{_localstatedir}/%{name}
 %dir %{_localstatedir}/%{name}/storage
 %dir %{_localstatedir}/%{name}/list
-%{_menudir}/%{name}
 %{_iconsdir}/*.png
 %{_miconsdir}/*.png
 %{_liconsdir}/*.png
