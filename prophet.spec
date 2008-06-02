@@ -64,8 +64,8 @@ rm -rf %{buildroot}
 
 install -d %{buildroot}%{_sysconfdir}
 install -d %{buildroot}%{_sbindir}
-install -d %{buildroot}%{_localstatedir}/%{name}/storage
-install -d %{buildroot}%{_localstatedir}/%{name}/list
+install -d %{buildroot}%{_localstatedir}/lib/%{name}/storage
+install -d %{buildroot}%{_localstatedir}/lib/%{name}/list
 install -d %{buildroot}/var/log/%{name}
 
 install -m0755 %{name} %{buildroot}%{_sbindir}/
@@ -109,9 +109,9 @@ rm -rf %{buildroot}
 %doc dia/*
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/%{name}.ini
 %attr(0755,root,root) %{_sbindir}/%{name}
-%dir %{_localstatedir}/%{name}
-%dir %{_localstatedir}/%{name}/storage
-%dir %{_localstatedir}/%{name}/list
+%dir %{_localstatedir}/lib/%{name}
+%dir %{_localstatedir}/lib/%{name}/storage
+%dir %{_localstatedir}/lib/%{name}/list
 %{_iconsdir}/*.png
 %{_miconsdir}/*.png
 %{_liconsdir}/*.png
