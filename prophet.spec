@@ -1,7 +1,7 @@
 Summary:	A Probabilistic Routing Protocol
 Name:		prophet
-Version:	2.6
-Release:	%mkrel 0.r82.1
+Version:	2.7
+Release:	%mkrel 0.r83.1
 License:	GPL
 Group:		System/Servers
 URL:		http://prophet.grasic.net/
@@ -14,7 +14,7 @@ Patch1:		prophet-ini_file_in_etc.diff
 Patch2:		prophet-helio.diff
 Requires:	dtn
 BuildRequires:	qt4-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 PRoPHET is a Probabilistic Routing Protocol using a History Imageof Encounters
