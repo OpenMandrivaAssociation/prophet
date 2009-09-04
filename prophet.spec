@@ -1,7 +1,7 @@
 Summary:	A Probabilistic Routing Protocol
 Name:		prophet
 Version:	2.7
-Release:	%mkrel 0.r83.1
+Release:	%mkrel 0.r83.2
 License:	GPL
 Group:		System/Servers
 URL:		http://prophet.grasic.net/
