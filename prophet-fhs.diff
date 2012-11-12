@@ -1,0 +1,21 @@
+--- prophet.ini	2007-05-15 14:43:04.000000000 +0200
++++ prophet.ini.oden	2007-05-15 18:17:05.000000000 +0200
+@@ -101,15 +101,15 @@
+ 
+ # The directory PRoPHET will use for storing bundles. It will be created on 
+ # startup if it does not already exist.
+-STORAGEPATH=c:\Samo\PRoPHET\win32\storage\
++STORAGEPATH=/var/lib/prophet/storage/
+ 
+ # The directory PRoPHET will use for logging. It will be created on startup if 
+ # it does not already exist.
+-LOGPATH=c:\Samo\PRoPHET\win32\log\
++LOGPATH=/var/log/prophet/
+ 
+ # The directory PRoPHET will use for storing the node list, bundle list etc. It
+ # will be created on startup if it does not already exist.
+-MSGPATH=c:\Samo\PRoPHET\win32\list\
++MSGPATH=/var/lib/prophet/list/
+ 
+ # Whether the node list should be stored to disk or not.
+ USEFILENODES=1

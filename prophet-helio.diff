@@ -1,0 +1,11 @@
+--- messageFile.h	2007-05-15 18:22:05.000000000 +0200
++++ messageFile.h.helio	2007-05-15 18:38:26.000000000 +0200
+@@ -33,7 +33,7 @@
+ 	 * @param maxItemNo the maximum number of items to read from the file.
+ 	 */
+ 	virtual void loadList(QStringList& sl, unsigned int maxItemNo = 0xFFFFFFFF);
+-	void MessageFile::addLog(int indet,QString message);
++	void addLog(int indet,QString message);
+ 
+ public slots:
+ 	//! Saves a message to file. (Internal?) 

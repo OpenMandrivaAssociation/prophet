@@ -1,0 +1,332 @@
+--- readFile.cpp	2007-05-15 14:43:04.000000000 +0200
++++ readFile.cpp.oden	2007-05-15 18:13:32.000000000 +0200
+@@ -5,12 +5,12 @@
+ 
+ ReadFile::ReadFile()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ }
+ 
+ float ReadFile::getBeta()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="BETA=";
+@@ -31,7 +31,7 @@
+ 
+ float ReadFile::getGamma()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="GAMMA=";
+@@ -53,7 +53,7 @@
+ 
+ float ReadFile::getPEncounter()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="PENCOUNTER=";
+@@ -75,7 +75,7 @@
+ 
+ int ReadFile::getSmartOffer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="SMARTOFFER=";
+@@ -97,7 +97,7 @@
+ 
+ int ReadFile::getListenerTimer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="LISTENERTIMER=";
+@@ -119,7 +119,7 @@
+ 
+ int ReadFile::getQueue()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="QUEUE=";
+@@ -141,7 +141,7 @@
+ 
+ int ReadFile::getInitiatorTimer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="INITIATORTIMER=";
+@@ -162,7 +162,7 @@
+ }
+ int ReadFile::getUseTTL()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="USETTL=";
+@@ -185,7 +185,7 @@
+ 
+ int ReadFile::getTTL()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="TTLVALUE=";
+@@ -208,7 +208,7 @@
+ 
+ int ReadFile::getUseACKS()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="USEACKS=";
+@@ -230,7 +230,7 @@
+ 
+ int ReadFile::getHelloTimer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="HELLOTIMER=";
+@@ -252,7 +252,7 @@
+ 
+ int ReadFile::getAgingTimer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="AGINGTIMER=";
+@@ -274,7 +274,7 @@
+ 
+ int ReadFile::getDTNHostPort()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="DTNHOSTPORT=";
+@@ -297,7 +297,7 @@
+ 
+ int ReadFile::getStorageSize()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="STORAGESIZE=";
+@@ -320,7 +320,7 @@
+ 
+ int ReadFile::getMemoryStorageSize()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="MEMORYSTORAGESIZE=";
+@@ -343,7 +343,7 @@
+ 
+ int ReadFile::getAlive()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="ALIVE=";
+@@ -367,7 +367,7 @@
+ 
+ int ReadFile::getBroadcastTimer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="BROADCASTTIMER=";
+@@ -391,7 +391,7 @@
+ 
+ int ReadFile::getHello()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="HELLO=";
+@@ -415,7 +415,7 @@
+ 
+ int ReadFile::getRouting()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="ROUTING=";
+@@ -437,7 +437,7 @@
+ 
+ int ReadFile::getDTNTimer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="DTNTIMER=";
+@@ -461,7 +461,7 @@
+ 
+ int ReadFile::getAgeFileNodes()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="AGEFILENODES=";
+@@ -483,7 +483,7 @@
+ 
+ int ReadFile::getContiniusUpdate()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="CONTINIUSUPDATE=";
+@@ -506,7 +506,7 @@
+ 
+ int ReadFile::getNodeId()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="NODEID=";
+@@ -528,7 +528,7 @@
+ 
+ int ReadFile::getUseFileBundles()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="USEFILEBUNDLES=";
+@@ -551,7 +551,7 @@
+ 
+ int ReadFile::getWriteToFileTimer()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="WRITETOFILETIMER=";
+@@ -573,7 +573,7 @@
+ 
+ int ReadFile::getUseFileHash()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="USEFILEHASH=";
+@@ -596,7 +596,7 @@
+ 
+ int ReadFile::getLogOption()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="LOGGING=";
+@@ -618,7 +618,7 @@
+ 
+ int ReadFile::getUseFileNodes()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="USEFILENODES=";
+@@ -640,7 +640,7 @@
+ 
+ QString ReadFile::getNodeName()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="NODENAME=";
+@@ -664,7 +664,7 @@
+ 
+ QString ReadFile::getStoragePath()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="STORAGEPATH=";
+@@ -688,7 +688,7 @@
+ 
+ QString ReadFile::getLogPath()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="LOGPATH=";
+@@ -711,7 +711,7 @@
+ }
+ QString ReadFile::getMsgPath()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="MSGPATH=";
+@@ -735,7 +735,7 @@
+ 
+ QHostAddress ReadFile::getNodeIp()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="NODEIP=";
+@@ -760,7 +760,7 @@
+ 
+ QHostAddress ReadFile::getBroadcast()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="NODEBROADCAST=";
+@@ -785,7 +785,7 @@
+ 
+ QHostAddress ReadFile::getNodeIp2()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="NODEIP2=";
+@@ -811,7 +811,7 @@
+ 
+ QHostAddress ReadFile::getDTNHostName()
+ {
+-	QFile configuration("prophet.ini");
++	QFile configuration("/etc/prophet.ini");
+ 	configuration.open(QIODevice::ReadOnly | QIODevice::Text);
+ 	QString line;
+ 	QString search="DTNHOSTNAME=";
