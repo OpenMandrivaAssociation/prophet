@@ -120,3 +120,33 @@ rm -rf %{buildroot}
 %{_miconsdir}/*.png
 %{_liconsdir}/*.png
 %{_datadir}/applications/*.desktop
+
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 2.7-0.r83.2mdv2010.0
++ Revision: 430804
+- rebuild
+
+* Sun Jul 20 2008 Oden Eriksson <oeriksson@mandriva.com> 2.7-0.r83.1mdv2009.0
++ Revision: 239216
+- 2.7-r83
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - drop old menu
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Tue May 15 2007 Oden Eriksson <oeriksson@mandriva.com> 2.6-0.r82.1mdv2008.0
++ Revision: 27029
+- Import prophet
+
+
+
+* Tue May 15 2007 Oden Eriksson <oeriksson@mandriva.com> 2.6-0.r82.1mdv2008.0
+- initial Mandriva package
