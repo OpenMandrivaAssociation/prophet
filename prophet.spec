@@ -1,7 +1,7 @@
 Summary:	A Probabilistic Routing Protocol
 Name:		prophet
 Version:	2.7
-Release:	0.r83.2
+Release:	0.r83.3
 License:	GPL
 Group:		System/Servers
 URL:		http://prophet.grasic.net/
@@ -13,7 +13,11 @@ Patch0:		prophet-fhs.diff
 Patch1:		prophet-ini_file_in_etc.diff
 Patch2:		prophet-helio.diff
 Requires:	dtn
-BuildRequires:	qt4-devel
+BuildRequires:	qmake5
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	dos2unix
 
 %description
 PRoPHET is a Probabilistic Routing Protocol using a History Imageof Encounters
@@ -27,7 +31,7 @@ available here:
 
 http://www.dtnrg.org/docs/specs/draft-lindgren-dtnrg-prophet-02.txt
 
-Severals demo PRoPHET implementations were done before on the Luleå University
+Severals demo PRoPHET implementations were done before on the Lulea University
 of Technology in the previous years. One of them was presented using a "Lego
 Mindstorms" robots as mobile nodes.
 
@@ -42,25 +46,27 @@ QT 4.1 framework. The code itself is now totally platform independable.
 %patch1 -p0
 %patch2 -p0
 
+find . -type f |xargs dos2unix
+
 # instead of a patch
 perl -pi -e "s|^GUI =.*|GUI = true|g" %{name}.pro
 perl -pi -e "s|^PDAGUI =.*|PDAGUI = false|g" %{name}.pro
 perl -pi -e "s|^DTN_INTERFACE =.*|DTN_INTERFACE = true|g" %{name}.pro
 
+# Quick and dirty way to port to Qt 5
+echo 'QT+=widgets' >>%{name}.pro
+find . -name "*.h" -o -name "*.cpp" |xargs sed -i -e 's,toAscii(),toLocal8Bit(),g;s,toAscii (),toLocal8Bit (),g;/#include <QtGui>/i#include <QtWidgets>'
+
 cp %{SOURCE1} .
 cp %{SOURCE2} .
 cp %{SOURCE3} .
 
-%build
-export QTDIR="/usr/lib/qt4/"
-export PATH=$PATH:$QTDIR/bin
+qmake-qt5 %{name}.pro
 
-$QTDIR/bin/qmake %{name}.pro
-%make
+%build
+%make_build
 
 %install
-rm -rf %{buildroot}
-
 install -d %{buildroot}%{_sysconfdir}
 install -d %{buildroot}%{_sbindir}
 install -d %{buildroot}%{_localstatedir}/lib/%{name}/storage
@@ -94,19 +100,6 @@ Type=Application
 Categories=X-MandrivaLinux-Internet-RemoteAccess;Network;RemoteAccess;
 EOF
 
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
-%clean
-rm -rf %{buildroot}
-
 %files
 %defattr(0644,root,root,0755)
 %doc dia/*
@@ -119,33 +112,3 @@ rm -rf %{buildroot}
 %{_miconsdir}/*.png
 %{_liconsdir}/*.png
 %{_datadir}/applications/*.desktop
-
-
-%changelog
-* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 2.7-0.r83.2mdv2010.0
-+ Revision: 430804
-- rebuild
-
-* Sun Jul 20 2008 Oden Eriksson <oeriksson@mandriva.com> 2.7-0.r83.1mdv2009.0
-+ Revision: 239216
-- 2.7-r83
-
-  + Pixel <pixel@mandriva.com>
-    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
-    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
-
-  + Thierry Vignaud <tvignaud@mandriva.com>
-    - drop old menu
-    - kill re-definition of %%buildroot on Pixel's request
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Tue May 15 2007 Oden Eriksson <oeriksson@mandriva.com> 2.6-0.r82.1mdv2008.0
-+ Revision: 27029
-- Import prophet
-
-
-
-* Tue May 15 2007 Oden Eriksson <oeriksson@mandriva.com> 2.6-0.r82.1mdv2008.0
-- initial Mandriva package
