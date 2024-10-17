@@ -4,7 +4,7 @@ Version:	2.7
 Release:	0.r83.3
 License:	GPL
 Group:		System/Servers
-URL:		http://prophet.grasic.net/
+URL:		https://prophet.grasic.net/
 Source0:	%{name}.tar.bz2
 Source1:	prophet-16x16.png
 Source2:	prophet-32x32.png
